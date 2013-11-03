@@ -1,0 +1,10 @@
+#!/bin/bash
+cd /var/www/www-content/uploads/cafeteria
+for i in kw*.pdf
+do
+o=${i%.pdf}.txt
+if [ ! -f $o ]
+then
+	 pdftotext -raw $i $o;
+fi
+done
